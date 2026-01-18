@@ -10,7 +10,7 @@ st.set_page_config(page_title="Bike Dashboard", layout="wide")
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r"D:\Visual\train.csv")
+    df = pd.read_csv("train.csv")
     df['datetime'] = pd.to_datetime(df['datetime'])
     df['year'] = df['datetime'].dt.year
     df['month'] = df['datetime'].dt.month
@@ -96,5 +96,6 @@ st.write("1. **Peak hours**: Usually 8 AM and 5-6 PM (commute times)")
 st.write("2. **Weather effect**: Clear days have highest rentals")
 st.write("3. **Weekend pattern**: Different from weekdays")
 st.write("4. **Temperature**: Warmer days = more rentals")
+
 
 st.success("✅ Dashboard loaded successfully!")
